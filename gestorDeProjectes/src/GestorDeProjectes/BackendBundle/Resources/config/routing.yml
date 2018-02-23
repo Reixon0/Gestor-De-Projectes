@@ -1,0 +1,3 @@
+gestor_de_projectes_backend_homepage:
+    path:     /
+    defaults: { _controller: GestorDeProjectesBackendBundle:Default:index }

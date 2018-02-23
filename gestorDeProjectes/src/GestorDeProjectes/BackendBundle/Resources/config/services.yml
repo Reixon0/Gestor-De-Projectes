@@ -1,0 +1,4 @@
+services:
+#    gestor_de_projectes_backend.example:
+#        class: GestorDeProjectes\BackendBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
