@@ -1,0 +1,4 @@
+gestor_projectes_backend_formi_ini:
+    path:     /
+    defaults: { _controller: GestorProjectesBackendBundle:Formulari:create }
+
