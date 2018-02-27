@@ -1,0 +1,81 @@
+<?php
+
+namespace GestorProjectes\BackendBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Subtasca
+ *
+ * @ORM\Table(name="Subtasca", indexes={@ORM\Index(name="id_Tasca", columns={"id_Tasca"}), @ORM\Index(name="Subtasca_ibfk_2", columns={"estat"})})
+ * @ORM\Entity
+ */
+class Subtasca
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nom", type="string", length=50, nullable=false)
+     */
+    private $nom;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="descripció", type="text", length=65535, nullable=false)
+     */
+    private $descripció;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="participants", type="string", length=500, nullable=false)
+     */
+    private $participants;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="temps_maxim", type="time", nullable=false)
+     */
+    private $tempsMaxim;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="temps_restant", type="time", nullable=false)
+     */
+    private $tempsRestant;
+
+    /**
+     * @var \Tasca
+     *
+     * @ORM\ManyToOne(targetEntity="Tasca")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_Tasca", referencedColumnName="id")
+     * })
+     */
+    private $idTasca;
+
+    /**
+     * @var \Estat
+     *
+     * @ORM\ManyToOne(targetEntity="Estat")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="estat", referencedColumnName="id")
+     * })
+     */
+    private $estat;
+
+
+}
+

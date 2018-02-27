@@ -1,0 +1,6 @@
+gestor_projectes_backend_homepage:
+    path:     /
+    defaults: { _controller: GestorProjectesBackendBundle:Default:index }
+gestor_projectes_backend_crearTasca:
+    path:     /tasca
+    defaults: { _controller: GestorProjectesBackendBundle:Tasca:index }
