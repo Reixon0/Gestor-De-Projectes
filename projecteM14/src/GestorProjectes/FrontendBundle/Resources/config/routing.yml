@@ -1,0 +1,3 @@
+gestor_projectes_frontend_homepage:
+    path:     /
+    defaults: { _controller: GestorProjectesFrontendBundle:Default:index }

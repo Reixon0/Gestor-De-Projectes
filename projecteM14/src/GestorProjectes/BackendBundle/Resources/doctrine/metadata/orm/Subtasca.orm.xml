@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Subtasca" table="Subtasca">
+    <indexes>
+      <index name="id_Tasca" columns="id_Tasca"/>
+      <index name="Subtasca_ibfk_2" columns="estat"/>
+    </indexes>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="nom" type="string" column="nom" length="50" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="descripció" type="text" column="descripció" length="65535" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="participants" type="string" column="participants" length="500" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="tempsMaxim" type="time" column="temps_maxim" nullable="false"/>
+    <field name="tempsRestant" type="time" column="temps_restant" nullable="false"/>
+    <many-to-one field="idTasca" target-entity="Tasca" fetch="LAZY">
+      <join-columns>
+        <join-column name="id_Tasca" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="estat" target-entity="Estat" fetch="LAZY">
+      <join-columns>
+        <join-column name="estat" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>
