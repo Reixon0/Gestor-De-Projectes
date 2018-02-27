@@ -1,7 +1,0 @@
-gestor_de_projectes_backend:
-    resource: "@GestorDeProjectesBackendBundle/Resources/config/routing.yml"
-    prefix:   /home
-
-app:
-    resource: '@AppBundle/Controller/'
-    type: annotation

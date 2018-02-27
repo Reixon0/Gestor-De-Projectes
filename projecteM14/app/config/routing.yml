@@ -1,0 +1,15 @@
+gestor_projectes_frontend:
+    resource: "@GestorProjectesFrontendBundle/Resources/config/routing.yml"
+    prefix:   /
+
+gestor_projectes_backend:
+    resource: "@GestorProjectesBackendBundle/Resources/config/routing.yml"
+    prefix:   /
+
+vallbonaweb:
+    resource: "@VallbonawebBundle/Resources/config/routing.yml"
+    prefix:   /public-web
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
