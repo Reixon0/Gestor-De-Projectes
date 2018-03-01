@@ -1,0 +1,200 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 02-mar-2018, 16:16:56
+    Author     : sergio
+*/
+
+.marco-exterior-tasca{
+    width: 40%;
+    margin-left: 5%;
+    margin-right: 5%;
+    float: left;
+}
+.marco-tasca{
+    background: #00d5fc;
+    margin-bottom: 30px;
+    color: black;
+    text-align: left;
+    min-height: 80px;
+    border-radius: 20px;
+}
+.top-contacto-page{
+    width: 100%;
+    height: 50px;
+    border: solid;
+    position: relative;
+}
+.añadir-tasca{
+    position: absolute;
+    left: 10%;
+    width: 5%;
+    height: 80%;
+    border: solid;
+    transform: translateY(5%);
+}
+.username-contacto{
+    position: absolute;
+    right: 10%;
+    width: 20%;
+    height: 80%;
+    border: solid;
+    transform: translateY(5%);
+}
+.tasca-opciones{
+    width: 100%;
+    height: 50px;
+    border: solid;
+    position: relative;
+}
+.modificar-tasca{
+    position: absolute;
+    width: 10%;
+    left: 10%;
+    height: 80%;
+    border: solid;
+    transform: translateY(5%);
+
+}
+.eliminar-tasca{
+    position: absolute;
+    width: 10%;
+    right: 10%;
+    height: 80%;
+    border: solid;
+    transform: translateY(5%);
+
+}
+
+.tasca-relative{
+    position: relative;
+
+}
+.tasca-link{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.changebg{
+    background: blue !important;
+}
+
+.top-tasca{
+    margin-top: 36px;
+}
+.listado-tasca{
+    min-height: 700px !important;
+    max-height: 700px !important;
+}
+.informacion-tasca{
+    background: black;
+    border-radius: 0px;
+    padding: 25px;
+}
+.background-no-padding{
+    background: black;
+    padding: 25px;
+    border-radius: 0px; 
+}
+.nombre-tasca{
+    text-transform: uppercase;
+    padding: 10px;
+    font-weight: bold;
+    margin-bottom: 0px;
+    font-size: 18px;
+
+}
+.descripcion-tasca{
+    padding: 10px;
+    font-style: italic;
+}
+.marco-tasca-info{
+    background: #00d5fc;
+    margin-bottom: 30px;
+    color: black;
+    text-align: left;
+    min-height: 700px;
+    border-radius: 20px;
+}
+
+.info-tasca-separacion{
+    text-align: center;
+    padding: 25px;
+}
+#pseparada{
+    padding-top: 25%;
+}
+.tascas-scrollbar{
+    overflow-y: scroll;
+    padding: 15px;
+    min-height: 735px;
+    max-height: 735px;
+}
+.listado-tasca{
+    margin-bottom: 70px;
+}
+.tascas-scrollbar::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.9);
+    border-radius: 0px;
+    background-color: #CCCCCC;
+}
+.tascas-scrollbar::-webkit-scrollbar
+{
+    width: 12px;
+    background-color: #F5F5F5;
+}
+
+.tascas-scrollbar::-webkit-scrollbar-thumb
+{
+    border-radius: 10px;
+    background-color: #D62929;
+    background-image: -webkit-linear-gradient(90deg,
+        transparent,
+        rgba(0, 0, 0, 0.4) 50%,
+        transparent,
+        transparent)
+}
+
+
+/*INDEX TASCA*/
+.index-tasca-marco{
+    border: solid;
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 40px;
+}
+.index-tasca-marco div{
+    margin-bottom: 15px;
+}
+
+/* SHOW TASCA */
+.show-tasca-nom{
+    font-size: 5rem;
+    text-transform:  uppercase;
+    font-weight: bold;
+}
+.show-tasca-descripcio{
+    border: solid;
+    line-height: 1.5;
+    text-align: left;
+    font-size: 2rem;
+    padding: 5%;
+}
+.show-tasca-row-subtasca{
+        min-height: 200px;
+}
+.show-subtasca-inside-tasca{
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 5rem;
+}
+.subtasca-inside-tasca-fields{
+    font-weight: bold;
+    font-size: 2rem;
+}

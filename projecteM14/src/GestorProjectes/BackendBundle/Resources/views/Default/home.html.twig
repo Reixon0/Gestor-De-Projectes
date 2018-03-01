@@ -5,7 +5,13 @@
 </head>
 <body>
 
-<p>login as {{username}}<p>
-
+<ul>
+    {% for item in tasques %}
+        <li>
+        <p> {{ item.nom  }}</p>
+        <p> {{ item.descripcio }}</p>
+        </li>
+     {% endfor %}
+</ul>
 </body>
 </html>

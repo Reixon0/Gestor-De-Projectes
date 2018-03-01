@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+    <h1>Estats list</h1>
+    <div class="container">
+        <div class="row">        
+            {% for estat in estats %}
+                <div class="col-xs-offset-2 col-xs-8 col-sm-offset-0 col-sm-6 col-md-4 col-lg-4">
+
+                    <div class="index-tasca-marco">
+                        <div>{{ estat.id }}</div>
+                        <div>{{estat.nom}}</div>
+
+                        <div>
+                            <a href="{{ path('estat_show', { 'id': estat.id }) }}">show</a>
+                            <a href="{{ path('estat_edit', { 'id': estat.id }) }}">edit</a>
+
+                        </div>
+                    </div>
+                </div>
+
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

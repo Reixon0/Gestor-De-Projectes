@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <h1>Tascas list</h1>
+<div class="container">
+    <div class="row">
+        {% for tasca in tascas %}
+            <div class="col-xs-offset-2 col-xs-8 col-sm-offset-0 col-sm-6 col-md-4 col-lg-3">
+
+                <div class="index-tasca-marco">
+                    <div>{{tasca.id }}</div>
+                    <div>{{tasca.nom}}</div>
+                    <div>{{tasca.descripcio}}</div>
+                    <div>{{tasca.tempsMaxim|date('H:i:s')}}</div>
+                    <div>{{tasca.tempsRestant|date('H:i:s')}}</div>
+                    <div>
+                        <a href="{{ path('tasca_show', { 'id': tasca.id }) }}">show</a>
+                        <a href="{{ path('tasca_edit', { 'id': tasca.id }) }}">edit</a>
+                    </div>
+                </div>
+            </div>
+
+        {% endfor %}
+    </div>
+    </div>
+{% endblock %}

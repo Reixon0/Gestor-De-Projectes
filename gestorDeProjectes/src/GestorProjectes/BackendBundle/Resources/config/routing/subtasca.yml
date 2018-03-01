@@ -1,0 +1,24 @@
+subtasca_index:
+    path:     /
+    defaults: { _controller: "GestorProjectesBackendBundle:Subtasca:index" }
+    methods:  GET
+
+subtasca_show:
+    path:     /{id}/show
+    defaults: { _controller: "GestorProjectesBackendBundle:Subtasca:show" }
+    methods:  GET
+
+subtasca_new:
+    path:     /new
+    defaults: { _controller: "GestorProjectesBackendBundle:Subtasca:new" }
+    methods:  [GET, POST]
+
+subtasca_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "GestorProjectesBackendBundle:Subtasca:edit" }
+    methods:  [GET, POST]
+
+subtasca_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "GestorProjectesBackendBundle:Subtasca:delete" }
+    methods:  DELETE

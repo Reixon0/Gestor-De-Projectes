@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="{{ asset('js/jquery.js') }}"></script>
+        <title>Login</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+
+
+                <ul class="nav navbar-nav">
+                    <li><a href={{ path('gestor_projectes_backend_buscaTasques') }}>Tascas</a></li>
+                    <li><a href={{ path('gestor_projectes_backend_crearTasca') }}>Crear</a></li>
+                </ul>
+                {%if {{ app.request.uri }} == path('gestor_projectes_backend_buscaTasques')%}
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                    </ul>
+                {%else%}
+
+                {%endif%} 
+            </div>
+        </nav>
+        <div class="row top-tasca">
+            <div class="container">
+                <div class="col-sm-offset-1 col-sm-5"></div>
+                <div class="col-sm-offset-3 col-sm-3"></div>
+            </div>
+        </div>
+        <div class="row"> 
+            <div class="container">
+                <div class="listado-tasca col-xs-12 col-sm-4 col-md-4 col-lg-4 border-tasca">
+                    <div class="tascas-scrollbar background-no-padding">
+                        {% for item in tasques %}
+                            <div id="marco" class="marco-tasca tasca-relative">
+                                <p class="nombre-tasca"> {{ item.nom  }}</p>
+                                <p class="descripcion-tasca"> {{ item.descripcio }}</p>
+                                <a target="_blank" id="tasca" class="tasca-link" href={{ path('gestor_projectes_backend_buscaTasques', {'id': item.id}) }}></a>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="informacion-tasca col-xs-12 col-sm-8 col-md-8 col-lg-8 border-tasca">    
+                    {% for item in tasques %}
+
+                        <div class="marco-tasca-info alinear-info">
+                            <p class="info-tasca-separacion" id="pseparada"> {{ item.nom  }}</p>
+                            <p class="info-tasca-separacion"> {{ item.descripcio }}</p>
+                            <p class="info-tasca-separacion"> {{ item.descripcio }}</p>
+                            <p class="info-tasca-separacion"> {{ item.nom  }}</p>
+                            <p class="info-tasca-separacion"> {{ item.nom  }}</p>
+                            <p class="info-tasca-separacion"> {{ item.nom  }}</p>
+                            <div class="col-xs-8 col-sm-6 col-md-6 col-lg-6">
+                                <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3"></div>
+                                <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3"></div>
+                            </div>
+                            <div class="col-xs-4 col-sm-2 col-md-2 col-lg-2">
+                                <img><img>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
