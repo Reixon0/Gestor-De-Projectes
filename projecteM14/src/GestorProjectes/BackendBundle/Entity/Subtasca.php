@@ -31,9 +31,9 @@ class Subtasca
     /**
      * @var string
      *
-     * @ORM\Column(name="descripció", type="text", length=65535, nullable=false)
+     * @ORM\Column(name="descripcio", type="text", length=65535, nullable=false)
      */
-    private $descripció;
+    private $descripcio;
 
     /**
      * @var string
@@ -113,27 +113,27 @@ class Subtasca
     }
 
     /**
-     * Set descripció
+     * Set descripcio
      *
-     * @param string $descripció
+     * @param string $descripcio
      *
      * @return Subtasca
      */
-    public function setDescripció($descripció)
+    public function setDescripcio($descripcio)
     {
-        $this->descripció = $descripció;
+        $this->descripcio = $descripcio;
 
         return $this;
     }
 
     /**
-     * Get descripció
+     * Get descripcio
      *
      * @return string
      */
-    public function getDescripció()
+    public function getDescripcio()
     {
-        return $this->descripció;
+        return $this->descripcio;
     }
 
     /**

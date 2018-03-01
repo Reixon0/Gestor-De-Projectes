@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+    {% block stylesheets %}{% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="{{ asset('js/jquery.js') }}"></script>
+</head>
+<body>
+    {% block navbar %}
+<nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+
+
+                <ul class="nav navbar-nav">
+                    <li><a>Tascas</a></li>
+                    <li><a>Crear</a></li>
+                </ul>
+                {#{%if {{ app.request.uri }} == path('gestor_projectes_backend_buscaTasques')%}
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                    </ul>
+                {%else%}
+
+                {%endif%} #}
+            </div>
+        </nav>
+{%endblock%}
+{% block body %}{% endblock %}
+
+{% block javascripts %}{% endblock %}
+
+</body>
+</html>

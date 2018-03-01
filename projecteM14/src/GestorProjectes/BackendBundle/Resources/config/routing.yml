@@ -1,4 +1,23 @@
-gestor_projectes_backend_formi_ini:
+gestor_projectes_backend_login:
     path:     /
-    defaults: { _controller: GestorProjectesBackendBundle:Formulari:create }
+    defaults: { _controller: GestorProjectesBackendBundle:Formulari:login }
+
+gestor_projectes_backend_registrar_usuario:
+    path:     /reg
+    defaults: { _controller: GestorProjectesBackendBundle:Crud:creaUsuari }
+
+gestor_projectes_backend_crearSubtasca:
+    path:     /subtasca
+    defaults: { _controller: GestorProjectesBackendBundle:Crud:creaSubtasca }
+    
+gestor_projectes_backend_crearTasca:
+    path:     /tasca
+    defaults: { _controller: GestorProjectesBackendBundle:Tasca:index }
+
+gestor_projectes_backend_buscaTasques:
+    path:     /home2
+    defaults: { _controller: GestorProjectesBackendBundle:Crud:buscaTasca }
+
+
+
 

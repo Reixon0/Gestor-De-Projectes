@@ -1,0 +1,74 @@
+<?php
+
+namespace GestorProjectes\BackendBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Tasca
+ *
+ * @ORM\Table(name="Tasca", indexes={@ORM\Index(name="responsable", columns={"responsable"}), @ORM\Index(name="estat", columns={"estat"})})
+ * @ORM\Entity
+ */
+class Tasca
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nom", type="string", length=50, nullable=false)
+     */
+    private $nom;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="descripció", type="text", length=65535, nullable=false)
+     */
+    private $descripció;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="temps_maxim", type="time", nullable=false)
+     */
+    private $tempsMaxim;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="temps_restant", type="time", nullable=false)
+     */
+    private $tempsRestant;
+
+    /**
+     * @var \Usuaris
+     *
+     * @ORM\ManyToOne(targetEntity="Usuaris")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="responsable", referencedColumnName="id")
+     * })
+     */
+    private $responsable;
+
+    /**
+     * @var \Estat
+     *
+     * @ORM\ManyToOne(targetEntity="Estat")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="estat", referencedColumnName="id")
+     * })
+     */
+    private $estat;
+
+
+}
+

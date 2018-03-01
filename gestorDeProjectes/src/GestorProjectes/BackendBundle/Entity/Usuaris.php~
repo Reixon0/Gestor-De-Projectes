@@ -1,0 +1,40 @@
+<?php
+
+namespace GestorProjectes\BackendBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Usuaris
+ *
+ * @ORM\Table(name="Usuaris")
+ * @ORM\Entity
+ */
+class Usuaris
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="username", type="string", length=50, nullable=false)
+     */
+    private $username;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="password", type="string", length=150, nullable=false)
+     */
+    private $password;
+
+
+}
+

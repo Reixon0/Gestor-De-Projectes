@@ -114,14 +114,37 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             return $ret;
         }
 
-        // gestor_projectes_backend_formi_ini
-        if ('/back-end' === $trimmedPathinfo) {
-            $ret = array (  '_controller' => 'GestorProjectes\\BackendBundle\\Controller\\FormulariController::createAction',  '_route' => 'gestor_projectes_backend_formi_ini',);
-            if (substr($pathinfo, -1) !== '/') {
-                return array_replace($ret, $this->redirect($rawPathinfo.'/', 'gestor_projectes_backend_formi_ini'));
+        if (0 === strpos($pathinfo, '/back-end')) {
+            // gestor_projectes_backend_login
+            if ('/back-end' === $trimmedPathinfo) {
+                $ret = array (  '_controller' => 'GestorProjectes\\BackendBundle\\Controller\\FormulariController::loginAction',  '_route' => 'gestor_projectes_backend_login',);
+                if (substr($pathinfo, -1) !== '/') {
+                    return array_replace($ret, $this->redirect($rawPathinfo.'/', 'gestor_projectes_backend_login'));
+                }
+
+                return $ret;
             }
 
-            return $ret;
+            // gestor_projectes_backend_registrar_usuario
+            if ('/back-end/reg' === $pathinfo) {
+                return array (  '_controller' => 'GestorProjectes\\BackendBundle\\Controller\\CrudController::creaUsuariAction',  '_route' => 'gestor_projectes_backend_registrar_usuario',);
+            }
+
+            // gestor_projectes_backend_crearSubtasca
+            if ('/back-end/subtasca' === $pathinfo) {
+                return array (  '_controller' => 'GestorProjectes\\BackendBundle\\Controller\\CrudController::creaSubtascaAction',  '_route' => 'gestor_projectes_backend_crearSubtasca',);
+            }
+
+            // gestor_projectes_backend_crearTasca
+            if ('/back-end/tasca' === $pathinfo) {
+                return array (  '_controller' => 'GestorProjectes\\BackendBundle\\Controller\\TascaController::indexAction',  '_route' => 'gestor_projectes_backend_crearTasca',);
+            }
+
+            // gestor_projectes_backend_buscarTasca
+            if ('/back-end/home2' === $pathinfo) {
+                return array (  '_controller' => 'GestorProjectes\\BackendBundle\\Controller\\CrudController::buscaTascaAction',  '_route' => 'gestor_projectes_backend_buscarTasca',);
+            }
+
         }
 
         // vallbonaweb_homepage

@@ -1,0 +1,39 @@
+gestor_projectes_backend_tasca:
+    resource: "@GestorProjectesBackendBundle/Resources/config/routing/tasca.yml"
+    prefix:   /tasca
+    
+gestor_projectes_backend_subtasca:
+    resource: "@GestorProjectesBackendBundle/Resources/config/routing/subtasca.yml"
+    prefix:   /subtasca
+    
+gestor_projectes_backend_estat:
+    resource: "@GestorProjectesBackendBundle/Resources/config/routing/estat.yml"
+    prefix:   /estat
+
+gestor_projectes_backend_usuaris:
+    resource: "@GestorProjectesBackendBundle/Resources/config/routing/usuaris.yml"
+    prefix:   /usuaris
+
+gestor_projectes_backend_login:
+    path:     /
+    defaults: { _controller: GestorProjectesBackendBundle:Formulari:login }
+
+gestor_projectes_backend_registrar_usuario:
+    path:     /reg
+    defaults: { _controller: GestorProjectesBackendBundle:Crud:creaUsuari }
+
+#gestor_projectes_backend_crearSubtasca:
+#    path:     /subtasca
+#    defaults: { _controller: GestorProjectesBackendBundle:Crud:creaSubtasca }
+    
+#gestor_projectes_backend_crearTasca:
+#    path:     /tasca
+#    defaults: { _controller: GestorProjectesBackendBundle:Tasca:index }
+
+#gestor_projectes_backend_buscaTasques:
+#    path:     /home2
+#    defaults: { _controller: GestorProjectesBackendBundle:Crud:buscaTasques }
+
+
+
+

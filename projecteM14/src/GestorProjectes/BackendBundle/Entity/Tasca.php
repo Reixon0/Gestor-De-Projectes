@@ -3,6 +3,7 @@
 namespace GestorProjectes\BackendBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Tasca
@@ -23,21 +24,23 @@ class Tasca
 
     /**
      * @var string
-     *
+     * 
      * @ORM\Column(name="nom", type="string", length=50, nullable=false)
+     *  
      */
     private $nom;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="descripció", type="text", length=65535, nullable=false)
+     * 
+     * @ORM\Column(name="descripcio", type="text", length=65535, nullable=false)
+     * 
      */
-    private $descripció;
+    private $descripcio;
 
     /**
      * @var \DateTime
-     *
+     * 
      * @ORM\Column(name="temps_maxim", type="time", nullable=false)
      */
     private $tempsMaxim;
@@ -51,7 +54,7 @@ class Tasca
 
     /**
      * @var \Usuaris
-     *
+     * 
      * @ORM\ManyToOne(targetEntity="Usuaris")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="responsable", referencedColumnName="id")
@@ -61,7 +64,7 @@ class Tasca
 
     /**
      * @var \Estat
-     *
+     * 
      * @ORM\ManyToOne(targetEntity="Estat")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="estat", referencedColumnName="id")
@@ -106,27 +109,27 @@ class Tasca
     }
 
     /**
-     * Set descripció
+     * Set descripcio
      *
-     * @param string $descripció
+     * @param string $descripcio
      *
      * @return Tasca
      */
-    public function setDescripció($descripció)
+    public function setDescripcio($descripcio)
     {
-        $this->descripció = $descripció;
+        $this->descripcio = $descripcio;
 
         return $this;
     }
 
     /**
-     * Get descripció
+     * Get descripcio
      *
      * @return string
      */
-    public function getDescripció()
+    public function getDescripcio()
     {
-        return $this->descripció;
+        return $this->descripcio;
     }
 
     /**
