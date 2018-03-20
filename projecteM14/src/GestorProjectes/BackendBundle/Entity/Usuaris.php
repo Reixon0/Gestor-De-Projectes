@@ -4,6 +4,7 @@ namespace GestorProjectes\BackendBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * Usuaris
@@ -11,8 +12,8 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @ORM\Table(name="Usuaris")
  * @ORM\Entity
  */
-class Usuaris
-{
+class Usuaris implements UserInterface {
+
     /**
      * @var integer
      *
@@ -40,15 +41,19 @@ class Usuaris
      */
     private $password;
 
-
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="tipus", type="string", length=11, nullable=false)
+     */
+    private $tipus;
 
     /**
      * Get id
      *
      * @return integer
      */
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
     }
 
@@ -59,8 +64,7 @@ class Usuaris
      *
      * @return Usuaris
      */
-    public function setUsername($username)
-    {
+    public function setUsername($username) {
         $this->username = $username;
 
         return $this;
@@ -71,8 +75,7 @@ class Usuaris
      *
      * @return string
      */
-    public function getUsername()
-    {
+    public function getUsername() {
         return $this->username;
     }
 
@@ -83,8 +86,7 @@ class Usuaris
      *
      * @return Usuaris
      */
-    public function setPassword($password)
-    {
+    public function setPassword($password) {
         $this->password = $password;
 
         return $this;
@@ -95,8 +97,47 @@ class Usuaris
      *
      * @return string
      */
-    public function getPassword()
-    {
+    public function getPassword() {
         return $this->password;
     }
+
+    /**
+     * Set tipus
+     *
+     * @param string $tipus
+     *
+     * @return string
+     */
+    public function setTipus($tipus) {
+        $this->tipus = $tipus;
+
+        return $this;
+    }
+
+    /**
+     * Get tipus
+     *
+     * @return string
+     */
+    public function getTipus() {
+        return $this->tipus;
+    }
+
+    public function getSalt() {
+        return null;
+    }
+
+    public function getRoles() {
+        //return $this->tipus;
+        return ['ROLE_'.$this->tipus.''];
+    }
+
+    public function eraseCredentials() {
+        
+    }
+
+    public function __toString() {
+        return strval($this->id);
+    }
+
 }

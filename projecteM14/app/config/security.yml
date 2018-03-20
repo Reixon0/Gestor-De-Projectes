@@ -1,24 +1,38 @@
-# To get started with security, check out the documentation:
-# https://symfony.com/doc/current/security.html
 security:
-
-    # https://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
+# En el caso que los usuarios tengan la contraseña cifrada configuramos los encoders para la entidad en la que estén los usuarios
+    encoders:
+        GestorProjectes\BackendBundle\Entity\Usuaris: bcrypt
+            
+# En providers le indicamos que los usuarios van a salir de la base de datos y el username será email
     providers:
-        in_memory:
-            memory: ~
-
+        gestor_de_projectes:
+            entity:
+                class: GestorProjectesBackendBundle:Usuaris
+                property: username
+ 
     firewalls:
-        # disables authentication for assets and the profiler, adapt it according to your needs
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
-
+ 
+# Configuramos el firewall main para indicarle el provider, la login_path, login_check y el path del logout
         main:
             anonymous: ~
-            # activate different ways to authenticate
+            http_basic: ~
+            provider: gestor_de_projectes
+            form_login: 
+              login_path: login
+              check_path: login
+              default_target_path: gestor_projectes_backend_buscaTasques
+            logout:
+              path: logout
+              target: /back-end/login
 
-            # https://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
-            #http_basic: ~
-
-            # https://symfony.com/doc/current/security/form_login_setup.html
-            #form_login: ~
+    access_control:
+        - { path: /home2, roles: [ROLE_USER, ROLE_ADMIN] }
+        - { path: /usuaris, roles: ROLE_ADMIN }
+        - { path: /tasca, roles: ROLE_ADMIN }
+        - { path: /subtasca, roles: ROLE_ADMIN }
+        - { path: ^/login$, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/reg, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        

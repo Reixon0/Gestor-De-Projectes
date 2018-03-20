@@ -1,0 +1,24 @@
+estat_index:
+    path:     /
+    defaults: { _controller: "GestorProjectesBackendBundle:Estat:index" }
+    methods:  GET
+
+estat_show:
+    path:     /{id}/show
+    defaults: { _controller: "GestorProjectesBackendBundle:Estat:show" }
+    methods:  GET
+
+estat_new:
+    path:     /new
+    defaults: { _controller: "GestorProjectesBackendBundle:Estat:new" }
+    methods:  [GET, POST]
+
+estat_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "GestorProjectesBackendBundle:Estat:edit" }
+    methods:  [GET, POST]
+
+estat_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "GestorProjectesBackendBundle:Estat:delete" }
+    methods:  DELETE

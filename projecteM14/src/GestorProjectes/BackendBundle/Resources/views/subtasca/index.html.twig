@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+    <h1>Subtascas list</h1>
+    <div class="container">
+        <div class="row">        
+            {% for subtasca in subtascas %}
+                <div class="col-xs-offset-2 col-xs-8 col-sm-offset-0 col-sm-6 col-md-4 col-lg-4">
+
+                    <div class="index-tasca-marco">
+                        <div>{{subtasca.id }}</div>
+                        <div>{{subtasca.nom}}</div>
+                        <div>{{subtasca.descripcio}}</div>
+                        <div>{{subtasca.participants }}</div>
+                        <div>{{subtasca.tempsMaxim|date('H:i:s')}}</div>
+                        <div>{{subtasca.tempsRestant|date('H:i:s')}}</div>
+                        <div>
+                            <a href="{{ path('subtasca_show', { 'id': subtasca.id }) }}">show</a>
+                            <a href="{{ path('subtasca_edit', { 'id': subtasca.id }) }}">edit</a>
+                        </div>
+                    </div>
+                </div>
+
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

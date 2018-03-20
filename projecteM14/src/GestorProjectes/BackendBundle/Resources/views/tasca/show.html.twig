@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Tasca</h1>
+    <div class="container">
+        <div class="row">        
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+                <div class="index-tasca-marco">
+
+                    <div>{{ tasca.id }}
+                    </div>
+                    <div class="show-tasca-nom">
+                        {{ tasca.nom }}
+                    </div>
+                    <div class="show-tasca-descripcio">
+                        {{ tasca.descripcio }}
+                    </div>
+                    <div>
+                        Temps Maxim: &nbsp;{% if tasca.tempsMaxim %}{{ tasca.tempsMaxim|date('H:i:s') }}{% endif %}
+                    </div>
+                    <div>
+                        Temps Restant: &nbsp;{% if tasca.tempsRestant %}{{ tasca.tempsRestant|date('H:i:s') }}{% endif %}
+                    </div>
+                    <div class="show-subtasca-inside-tasca">
+                        subtasca
+                    </div>
+                    <div class="row index-tasca-marco show-tasca-row-subtasca">
+                        <div class="col-lg-4">
+                            <div class="subtasca-inside-tasca-fields">
+                                Nom Subtasca
+                            </div>
+                            <div>
+                                {{tasca.nom}}
+                            </div>
+
+                        </div>
+                        <div class="col-lg-8">
+                            <div class="subtasca-inside-tasca-fields">
+                                Descripció Subtasca
+                            </div>
+                            <div>
+
+                                {{tasca.descripcio}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <div>
+                <div>
+                    <a href="{{ path('tasca_index') }}">Back to the list</a>
+
+                    <a href="{{ path('tasca_edit', { 'id': tasca.id }) }}">Edit</a>
+                </div>
+
+                {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+                {{ form_end(delete_form) }}
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}

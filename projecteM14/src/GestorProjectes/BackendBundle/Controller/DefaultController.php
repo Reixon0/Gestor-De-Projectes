@@ -9,7 +9,5 @@ class DefaultController extends Controller
     public function indexAction()
     {
         return $this->render('GestorProjectesBackendBundle:Default:index.html.twig');
-    }
-
-    
+    }    
 }

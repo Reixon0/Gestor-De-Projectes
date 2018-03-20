@@ -5,6 +5,8 @@ namespace GestorProjectes\BackendBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use BackendBundle\Entity\Estat;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
 class SubtascaType extends AbstractType
 {
@@ -13,7 +15,13 @@ class SubtascaType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('nom')->add('descripcio')->add('participants')->add('tempsMaxim')->add('tempsRestant')->add('idTasca')->add('estat');
+        $builder->add('nom')->add('descripcio')->add('participants')->add('tempsMaxim')->add('estat', EntityType::class, array(
+            'class' => 'GestorProjectesBackendBundle:Estat',
+            'choice_label' => 'nom',
+            'multiple' => FALSE,
+            'label_attr' => array('class' => 'labelT'),
+            'attr' => array('class' => 'form-control')
+        ));
     }/**
      * {@inheritdoc}
      */
